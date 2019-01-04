@@ -1,2 +1,3 @@
-# DayZ_SA_Epoch
+# Epoch Mod for DayZ Standalone
+
 WIP
