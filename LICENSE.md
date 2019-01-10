@@ -60,7 +60,7 @@ Section 3 – License Conditions
 Your exercise of the Licensed Rights is expressly made subject to the following conditions.
 
 * a. Attribution
-  1. If You Share the Licensed Material (including in modified form), You must:
+1. If You Share the Licensed Material (including in modified form), You must:
     * a. retain the following if it is supplied by the Licensor with the Licensed Material:
         * i. identification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);
         * ii. a copyright notice;
