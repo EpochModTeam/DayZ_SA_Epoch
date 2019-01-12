@@ -22,7 +22,7 @@ ASSETS is where each creator will have their own folder for models, textures, an
 
 Contribute Work
 === 
-1. Setup GitHub LFS: Install Git extension for versioning large files: https://git-lfs.github.com/ this is used for models, sounds and source files.
+1. Install Git extension for versioning large files: https://git-lfs.github.com/ this is used for models, sounds and source files.
 
 2. Be able to fork, compile, test, and merge your changes on your own. 
 
