@@ -20,12 +20,10 @@ ASSETS is where each creator will have their own folder for models, textures, an
 * Each artist should have one folder for their work. The folder should be named after the artist's name but please keep it short so if you have a long name please abbreviate it.
 * For models only upload binarized models to the public GitHub and share the sources with an Epoch Dev in case we need to fix the model later.
 
-GitHub Setup
-===
-* Install Git extension for versioning large files: https://git-lfs.github.com/ this is used for models, sounds and source files.
-
 Contribute Work
 === 
-1. Be able to fork, compile, test, and merge your changes on your own. 
+1. Setup GitHub LFS: Install Git extension for versioning large files: https://git-lfs.github.com/ this is used for models, sounds and source files.
 
-2. Submit work via a pull request to the experimental GitHub branch found here: https://github.com/EpochModTeam/DayZ_SA_Epoch/tree/experimental
+2. Be able to fork, compile, test, and merge your changes on your own. 
+
+3. Submit work via a pull request to the experimental GitHub branch found here: https://github.com/EpochModTeam/DayZ_SA_Epoch/tree/experimental
