@@ -9,7 +9,7 @@ By contributing to Epoch Mod you agree to the licensing and terms of the and the
 Naming Conventions
 ===
 * Added pbo's will have the prefix dzsa_epoch_*
-WIP
+
 
 Assets
 ===
