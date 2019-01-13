@@ -59,6 +59,11 @@ class CfgMods
 				value = "";
 				files[] = {"dzsa_epoch_core/scripts/5_Mission"};
 			};
+			
+			class imageSets
+            {
+                files[] = {"dzsa_epoch_assets/imagesets"};
+            };
 		};
 	};
 };
