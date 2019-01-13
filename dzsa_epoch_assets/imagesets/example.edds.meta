@@ -1,0 +1,14 @@
+MetaFileClass  {
+ Name "{0885D487256089E9}dzsa_epoch_assets/DS/example.edds"
+ Author "epochdevteam"
+ ChangeDate 1876599570
+ Configurations {
+  TGAResourceClass PC {
+   SourceFile "example.tga"
+  }
+  TGAResourceClass XBOX_ONE : PC {
+  }
+  TGAResourceClass PS4 : PC {
+  }
+ }
+}
