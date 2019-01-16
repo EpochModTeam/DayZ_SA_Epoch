@@ -13,10 +13,10 @@ Naming Conventions, Prefix Path
 
 Assets
 ===
-**CORE** is where all changes to the scripts.pbo will be handled.
-**CONFIGS** all assets config entries will go here.
-**ASSETS** is where each creator will have their own folder for models, textures, and UI's.
-**PV_ASSETS** place for model sources that are not going to be made public. (If you are a modeler contact Awol to gain access to this repo.)
+* **CORE** is where all changes to the scripts.pbo will be handled.
+* **CONFIGS** all assets config entries will go here.
+* **ASSETS** is where each creator will have their own folder for models, textures, and UI's.
+* **PV_ASSETS** place for model sources that are not going to be made public. (If you are a modeler contact Awol to gain access to this repo.)
 
 * Each author should have one folder for their work per ASSET pbo. The folder should be named after the artist's name but please keep it short so if you have a long name please abbreviate it. (emt/dzsa_epoch_assets/*/data) (Example: emt/dzsa_epoch_assets/Joe/data, emt/dzsa_epoch_pv_assets/Joe/data)
 * PV_ASSETS pbo is only for model sources that the author wishes to keep private all others should be commited to ASSETS.
