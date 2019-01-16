@@ -8,8 +8,8 @@ By contributing to Epoch Mod you agree to the licensing and terms of the and the
 
 Naming Conventions, Prefix Path
 ===
-* Added pbo's will have the prefix dzsa_epoch_*
-* Use the prefix path: emt/dzsa_epoch_*/
+* Added pbo's will have the name prefix dzsa_epoch_*
+* Use the prefix path: emt (Example: emt/dzsa_epoch_assets/Joe/data/example.e)
 
 Assets
 ===
