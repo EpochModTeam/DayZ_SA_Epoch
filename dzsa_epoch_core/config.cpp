@@ -45,25 +45,25 @@ class CfgMods
 			class gameScriptModule
 			{
 				value = "";
-				files[] = {"dzsa_epoch_core/scripts/3_Game"};
+				files[] = {"emt/dzsa_epoch_core/scripts/3_Game"};
 			};
 			
 			class worldScriptModule
 			{
 				value = "";
-				files[] = {"dzsa_epoch_core/scripts/4_World"};
+				files[] = {"emt/dzsa_epoch_core/scripts/4_World"};
 			};
 
 			class missionScriptModule
 			{
 				value = "";
-				files[] = {"dzsa_epoch_core/scripts/5_Mission"};
+				files[] = {"emt/dzsa_epoch_core/scripts/5_Mission"};
 			};
 			
 			class imageSets
-            {
-                files[] = {"dzsa_epoch_assets/imagesets"};
-            };
+			{
+				files[] = {"emt/dzsa_epoch_assets/imagesets"};
+			};
 		};
 	};
 };
