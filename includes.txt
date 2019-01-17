@@ -1,1 +1,1 @@
-*.emat;*.edds;*.ptc;*.c;*.imageset;*.layout;*.ogg;*.json
+*.emat;*.edds;*.ptc;*.c;*.imageset;*.layout;*.ogg;*.json;*.rtm;*.xml;*.csv;*.html;*.paa;*.txt;*.rvmat;
