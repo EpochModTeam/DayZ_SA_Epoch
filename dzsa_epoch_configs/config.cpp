@@ -39,3 +39,5 @@ class CfgMods
 		type = "mod";
 	};
 };
+
+#include "\emt\dzsa_epoch_configs\Configs\CfgVehicles.cpp"

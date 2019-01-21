@@ -32,6 +32,7 @@ class CfgMods
 		hidePicture = 1;
 		name = "Epoch";
 		credits = "Epoch";
+		creditsJson = "emt/dzsa_epoch_assets/awol/Json/credits.json";
 		author = "Epoch Mod Dev Team";
 		authorID = "0"; 
 		version = "1.0"; 

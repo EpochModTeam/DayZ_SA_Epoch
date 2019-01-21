@@ -1,0 +1,59 @@
+{
+  "Departments": [
+    {
+      "DepartmentName": "Epoch Mod",
+      "Sections": [
+        {
+          "SectionName": "Epoch Mod Team",
+          "SectionLines": [
+            "Aaron Clark aka [VB]AWOL",
+            "DirtySanchez",
+            "Helion4",
+            "Axle",
+            "He-Man",
+            "Axeman",
+            "Grahame",
+            "Salival"
+          ]
+        }
+      ]
+    },
+    {
+      "DepartmentName": "",
+      "Sections": [
+        {
+          "SectionName": "Epoch Mod Community Team",
+          "SectionLines": [
+            "Cleetus",
+            "Jacob_Mango",
+            "DannyDog",
+            "Another Caveman",
+            "Dr_J0nes",
+            "NotABanana",
+            "GrosTon1",
+            "Diesel",
+            "Ghostrider[GRG]",
+            "Gunny",
+            "Laniakea",
+            "MonkeyNutz",
+            "Odayku",
+            "Relentless",
+            "SkippedFrames",
+            "rAMELEUUU"
+          ]
+        }
+      ]
+    },
+    {
+      "DepartmentName": "",
+      "Sections": [
+        {
+          "SectionName": "Epoch Mod Extra Credits",
+          "SectionLines": [
+            "Pixabay"
+          ]
+        }
+      ]
+    }
+  ]
+}

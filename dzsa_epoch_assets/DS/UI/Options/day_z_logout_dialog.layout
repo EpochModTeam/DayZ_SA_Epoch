@@ -1,0 +1,136 @@
+WindowWidgetClass LogoutDialogRoot {
+ visible 1
+ clipchildren 1
+ inheritalpha 0
+ color 0.0824 0.0824 0.0824 0.9216
+ position 0 0
+ size 540 190
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 1
+ vexactsize 1
+ priority 960
+ style Colorable
+ {
+  PanelWidgetClass LogoutDialogPanel {
+   position 0 0
+   size 1 1
+   halign center_ref
+   valign center_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 0
+   vexactsize 0
+   scaled 1
+   style blank
+   {
+    ButtonWidgetClass bLogoutNow {
+     visible 1
+     inheritalpha 0
+     color 0.1569 0.1569 0.1569 1
+     position 14 14
+     size 120.5 40
+     valign bottom_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style EmptyHighlight
+     text "#layout_day_z_dialog_exit"
+     text_proportion 0.5
+     font "gui/fonts/sdf_MetronBook24"
+    }
+    ButtonWidgetClass bCancel {
+     visible 1
+     inheritalpha 0
+     color 0.1569 0.1569 0.1569 1
+     position 14 14
+     size 120.5 40
+     halign right_ref
+     valign bottom_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style EmptyHighlight
+     text "#cancel"
+     text_proportion 0.5
+     font "gui/fonts/sdf_MetronBook24"
+    }
+    RichTextWidgetClass logoutTimeText {
+     clipchildren 1
+     color 1 1 1 1
+     position -1.09536 94.4074
+     size 512 28
+     halign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     text "#layout_logout_dialog_text"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 0
+     "exact text size" 22
+     "size to text h" 1
+     "size to text v" 1
+     "text halign" center
+     "text valign" center
+     wrap 1
+    }
+    TextWidgetClass logoutTimeText0 {
+     visible 1
+     clipchildren 0
+     position 0 49.5245
+     size 512 23.8915
+     halign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style Bold
+     text "#layout_logout_dialog_until_logout"
+     font "gui/fonts/sdf_MetronBook72"
+     "text color" 1 1 1 1
+     "exact text" 0
+     "text halign" center
+     "text valign" center
+    }
+    PanelWidgetClass SeparatorPanel {
+     color 0.7569 0.0941 0.0941 0.7843
+     position -1.09536 81.9074
+     size 0.85 2.5
+     halign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 0
+     vexactsize 1
+     scaled 1
+     priority 10
+     style rover_sim_colorable
+    }
+    RichTextWidgetClass txtInfo {
+     clipchildren 1
+     color 1 1 1 1
+     position 0 19.1091
+     size 512 26.1085
+     halign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     text "#layout_logout_dialog_text"
+     font "gui/fonts/sdf_MetronLight24"
+     "exact text" 0
+     "exact text size" 22
+     "size to text h" 1
+     "size to text v" 1
+     "text halign" center
+     "text valign" center
+     wrap 1
+    }
+   }
+  }
+ }
+}
