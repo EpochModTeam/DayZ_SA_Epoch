@@ -41,3 +41,4 @@ class CfgMods
 };
 
 #include "\emt\dzsa_epoch_configs\Configs\CfgVehicles.cpp"
+#include "\emt\dzsa_epoch_configs\Configs\CfgVehicleClasses.cpp"
