@@ -1,4 +1,4 @@
-class 50cm_test_Wall extends BaseBuildingBase
+class test_Wall extends BaseBuildingBase
 {
 	protected bool m_HasGate = false;
 	protected bool m_IsOpened = false;
@@ -25,7 +25,7 @@ class 50cm_test_Wall extends BaseBuildingBase
 
 	override string GetConstructionKitType()
 	{
-		return "50cm_test_wall_Kit";
+		return "test_wall_Kit";
 	}
 
 	//Gate

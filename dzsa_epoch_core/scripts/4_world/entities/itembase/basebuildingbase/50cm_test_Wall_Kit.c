@@ -1,8 +1,8 @@
-class 50cm_test_wall_Kit extends ItemBase
+class test_wall_Kit extends ItemBase
 {
 	ref protected EffectSound 						m_DeployLoopSound;
 
-	void 50cm_test_wall_Kit()
+	void test_wall_Kit()
 	{
 		RegisterNetSyncVariableBool("m_IsSoundSynchRemote");
 	}
@@ -75,7 +75,7 @@ class 50cm_test_wall_Kit extends ItemBase
 			vector position = player_base.GetLocalProjectionPosition();
 			vector orientation = player_base.GetLocalProjectionOrientation();
 
-			Fence fence = Fence.Cast(GetGame().CreateObject("Fence", GetPosition()));
+			Fence fence = Fence.Cast(GetGame().CreateObject("test_Wall", GetPosition()));
 			fence.SetPosition(position);
 			fence.SetOrientation(orientation);
 

@@ -1,4 +1,4 @@
-class Craft_50cm_test_wall_Kit extends RecipeBase
+class Craft_test_wall_Kit extends RecipeBase
 {
 	override void Init()
 	{
@@ -45,7 +45,7 @@ class Craft_50cm_test_wall_Kit extends RecipeBase
 		//----------------------------------------------------------------------------------------------------------------------
 
 		//result1
-		AddResult("50cm_test_wall_Kit");//add results here
+		AddResult("test_wall_Kit");//add results here
 
 		m_ResultSetFullQuantity[0] = false;//true = set full quantity, false = do nothing
 		m_ResultSetQuantity[0] = -1;//-1 = do nothing
