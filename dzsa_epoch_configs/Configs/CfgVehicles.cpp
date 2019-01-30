@@ -29,13 +29,13 @@ class CfgVehicles
 
 class FenceKit;
 class FenceKitPlacing;
-	class 50cm_test_wall_Kit: FenceKit
+	class test_wall_Kit: FenceKit
 	{
 		scope=2;
 		displayName="Test Wall Kit";
 		descriptionShort="Test Wall Kit";
 	};
-	class 50cm_test_wall_Placing: FenceKitPlacing
+	class test_wall_Placing: FenceKitPlacing
 	{
 		scope=2;
 		model="\DZ\gear\camping\fence_kit_placing.p3d";
@@ -55,7 +55,7 @@ class FenceKitPlacing;
 		hologramMaterialPath="emt\dzsa_epoch_pv_assets\emt\baseb\walls\data";/// change this
 		slopeLimit=0.25;
 	};
-	class 50cm_test_Wall: Inventory_Base
+	class test_Wall: Inventory_Base
 	{
 		scope=2;
 		displayName="Test_Wall";
