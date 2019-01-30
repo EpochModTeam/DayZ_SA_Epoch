@@ -26,7 +26,7 @@ class CfgVehicles
 
 	};
 ///walls
-
+class Inventory_Base;
 class FenceKit;
 class FenceKitPlacing;
 	class test_wall_Kit: FenceKit
