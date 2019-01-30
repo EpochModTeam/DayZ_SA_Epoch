@@ -632,4 +632,33 @@ class FenceKitPlacing;
 		};
 	};
 
+//inventory wall
+	class INV_test_Wall: Inventory_Base
+	{
+	    scope = 2;
+	    displayName = "INV_test_Wall";
+	    descriptionShort = "INV_test_Wall";
+	    model = "emt\dzsa_epoch_pv_assets\emt\baseb\walls\wall_1m.p3d";
+	    ContinuousActions[] = {148,147};
+	    rotationFlags = 17;
+	    weight = 510;
+	    itemSize[] = {3,2};
+	    repairableWithKits[] = {5,2};
+	    repairCosts[] = {30.0,25.0};
+	    //hiddenSelections[] = {"camo1"};
+	    //hiddenSelectionsTextures[] = {"\emt\dzsa_epoch_pv_assets\emt\baseb\bboard_01\data\billboard_01_co.paa"};		
+	    class DamageSystem
+	    {
+	    	class GlobalHealth
+	    	{
+	    		class Health
+	    		{
+	    			hitpoints = 100;
+	    			healthLevels[] = {{1.0,{}},{0.7,{}},{0.5,{}},{0.3,{}},{0.0,{}}};
+	    		};
+	    	};
+	    };
+	    class AnimEvents{};
+    };
+
 };
