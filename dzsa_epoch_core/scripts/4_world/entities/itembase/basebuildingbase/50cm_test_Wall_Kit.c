@@ -93,7 +93,7 @@ class 50cm_test_wall_Kit extends ItemBase
 
 	override string GetDeploySoundset()
 	{
-		return "putDown_50cm_test_wall_Kit_SoundSet";
+		return "putDown_FenceKit_SoundSet";
 	}
 
 	override string GetLoopDeploySoundset()
