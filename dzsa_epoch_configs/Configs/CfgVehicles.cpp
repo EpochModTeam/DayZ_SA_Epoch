@@ -57,210 +57,501 @@ class FenceKitPlacing;
 	};
 	class test_Wall: Inventory_Base
 	{
-		scope=2;
-		displayName="Test_Wall";
-		descriptionShort="Test_Wall";
-		//model="\DZ\gear\camping\fence.p3d";
-		model="\emt\dzsa_epoch_pv_assets\emt\baseb\walls\wall_1m.p3d";
-		bounding="BSphere";
-		overrideDrawArea="3.0";
-		forceFarBubble="true";
-		SingleUseActions[]={527};
-		ContinuousActions[]={155,239};
-		InteractActions[]={1051};
-		armAction="Disarm";
-		handheld="false";
-		lootCategory="Crafted";
-		carveNavmesh=1;
-		weight=3000;
-		itemSize[]={2,3};
-		useEntityHierarchy="true";
-		physLayer="item_large";
-		rotationFlags=2;
-		class test_Wall : Inventory_Base
+		scope = 2;
+		displayName = "Test_Wall";
+		descriptionShort = "Test_Wall";
+		model = "\emt\dzsa_epoch_pv_assets\emt\baseb\walls\wall_1m.p3d";
+		bounding = "BSphere";
+		overrideDrawArea = "3.0";
+		forceFarBubble = "true";
+		SingleUseActions[] = {527};
+		ContinuousActions[] = {155,239};
+		InteractActions[] = {1051};
+		armAction = "Disarm";
+		handheld = "false";
+		lootCategory = "Crafted";
+		carveNavmesh = 1;
+		weight = 3000;
+		itemSize[] = {2,3};
+		useEntityHierarchy = "true";
+		physLayer = "item_large";
+		rotationFlags = 2;
+		class DamageSystem
 		{
-			scope = 2;
-			displayName = "Test_Wall";
-			descriptionShort = "Test_Wall";
-			//model="\DZ\gear\camping\fence.p3d";
-			model = "\emt\dzsa_epoch_pv_assets\emt\baseb\walls\wall_1m.p3d";
-			bounding = "BSphere";
-			overrideDrawArea = "3.0";
-			forceFarBubble = "true";
-			SingleUseActions[] = { 527 };
-			ContinuousActions[] = { 155,239 };
-			InteractActions[] = { 1051 };
-			armAction = "Disarm";
-			handheld = "false";
-			lootCategory = "Crafted";
-			carveNavmesh = 1;
-			weight = 3000;
-			itemSize[] = { 2,3 };
-			useEntityHierarchy = "true";
-			physLayer = "item_large";
-			rotationFlags = 2;
-			class DamageSystem
+			class GlobalHealth
 			{
-				class GlobalHealth
+				class Health
 				{
-					class Health
-					{
-						hitpoints = 100;
-					};
-				};
-				class GlobalArmor
-				{
-					class Projectile
-					{
-						Health = 0;
-						Blood = 0;
-						Shock = 0;
-					};
+					hitpoints = 100;
 				};
 			};
-			attachments[] = {};
-			class AnimationSources
+			class GlobalArmor
 			{
+				class Projectile
+				{
+					Health = 0;
+					Blood = 0;
+					Shock = 0;
+				};
+			};
+		};
+		attachments[] = 
+		{
+			"Wall_Barbedwire_1",
+			"Wall_Barbedwire_2",
+			"Wall_Camonet",
+			"Att_CombinationLock",
+			"Material_Nails",
+			"Material_WoodenPlanks",
+			"Material_MetalSheets",
+			"Material_WoodenLogs",
+			"Material_MetalWire"	
+			};
+		class GUIInventoryAttachmentsProps
+		{
+			class Base
+			{
+				name="$STR_CfgVehicles_Fence_Att_Category_Base";
+				description="";
+				attachmentSlots[]=
+				{
+					"Material_WoodenLogs"
+				};
+				icon="missing";
+				selection="wall";
+			};
+			class Attachments
+			{
+				name="$STR_CfgVehicles_Fence_Att_Category_Attachments";
+				description="";
+				attachmentSlots[]=
+				{
+					"Wall_Camonet",
+					"Wall_Barbedwire_1",
+					"Wall_Barbedwire_2",
+					"Att_CombinationLock"
+				};
+				icon="missing";
+				selection="wall";
+			};
+			class Material
+			{
+				name="$STR_CfgVehicles_Fence_Att_Category_Materials";
+				description="";
+				attachmentSlots[]=
+				{
+					"Material_Nails",
+					"Material_WoodenPlanks",
+					"Material_MetalSheets",
+					"Material_MetalWire"
+				};
+				icon="missing";
+				selection="wall";
+			};
+		};
+		class AnimationSources
+		{
 				class AnimSourceShown
 				{
 					source = "user";
-					animPeriod = 0.0099999998;
+					animPeriod = 0.01;
 					initPhase = 0;
 				};
 				class AnimSourceHidden
 				{
 					source = "user";
-					animPeriod = 0.0099999998;
+					animPeriod = 0.01;
 					initPhase = 1;
 				};
 				class AnimRotate
 				{
 					source = "user";
-					animPeriod = 0.0099999998;
+					animPeriod = 0.01;
 					initPhase = 0;
 				};
-				class Wall_Interact_Rotate : AnimRotate
+				class Wall_Interact_Rotate: AnimRotate{};
+				class Wall_Barbedwire_Mounted_Rotate: AnimRotate{};
+				class Wall_Camonet_Rotate: AnimRotate{};
+				class Wall_Gate_Rotate: AnimRotate{};
+				class Wall_Base_Down_Rotate: AnimRotate{};
+				class Wall_Base_Up_Rotate: AnimRotate{};
+				class Wall_Wood_Down_Rotate: AnimRotate{};
+				class Wall_Wood_Up_Rotate: AnimRotate{};
+				class Wall_Metal_Down_Rotate: AnimRotate{};
+				class Wall_Metal_Up_Rotate: AnimRotate{};
+				class Material_WoodenLogs: AnimSourceHidden{};
+				class Material_MetalWire: AnimSourceHidden{};
+				class Wall_Barbedwire_1: AnimSourceHidden{};
+				class Wall_Barbedwire_1_Mounted: AnimSourceHidden{};
+				class Wall_Barbedwire_2: AnimSourceHidden{};
+				class Wall_Barbedwire_2_Mounted: AnimSourceHidden{};
+				class Wall_Camonet: AnimSourceHidden{};
+				class Deployed: AnimSourceHidden{};
+				class Base: AnimSourceHidden{};
+				class Wall_Platform: AnimSourceHidden{};
+				class Wall_Platform_Stairs_Left: AnimSourceHidden{};
+				class Wall_Platform_Stairs_Right: AnimSourceHidden{};
+				class Wall_Gate: AnimSourceHidden{};
+				class Wall_Base_Down: AnimSourceHidden{};
+				class Wall_Base_Up: AnimSourceHidden{};
+				class Wall_Metal_Down: AnimSourceHidden{};
+				class Wall_Metal_Up: AnimSourceHidden{};
+				class Wall_Wood_Down: AnimSourceHidden{};
+				class Wall_Wood_Up: AnimSourceHidden{};
+			};
+		class Construction
+		{
+			class wall
+			{
+				class base
 				{
+					name="$STR_CfgVehicles_Construction_Part_Base";
+					is_base=1;
+					required_parts[]={};
+					conflicted_parts[]={};
+					collision_data[]={};
+					build_action_type=4;
+					dismantle_action_type=4;
+					material_type=1;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenLog";
+							slot_name="Material_WoodenLogs";
+							quantity=2;
+							lockable=1;
+						};
+					};
 				};
-				class Wall_Barbedwire_Mounted_Rotate : AnimRotate
+				class wall_platform
 				{
+					name="$STR_CfgVehicles_Construction_Part_Platform";
+					required_parts[]=
+					{
+						"base"
+					};
+					conflicted_parts[]=
+					{
+						"wall_gate"
+					};
+					collision_data[]=
+					{
+						"wall_platform_min",
+						"wall_platform_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=3;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=5;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=15;
+						};
+					};
 				};
-				class Wall_Camonet_Rotate : AnimRotate
+				class wall_platform_stairs_left
 				{
+					name="$STR_CfgVehicles_Construction_Part_Platform_Stairs_Left";
+					required_parts[]=
+					{
+						"wall_platform"
+					};
+					conflicted_parts[]={};
+					collision_data[]={};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=3;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=4;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=8;
+						};
+					};
 				};
-				class Wall_Gate_Rotate : AnimRotate
+				class wall_platform_stairs_right
 				{
+					name="$STR_CfgVehicles_Construction_Part_Platform_Stairs_Right";
+					required_parts[]=
+					{
+						"wall_platform"
+					};
+					conflicted_parts[]={};
+					collision_data[]={};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=3;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=4;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=8;
+						};
+					};
 				};
-				class Wall_Base_Down_Rotate : AnimRotate
+				class wall_gate
 				{
+					name="$STR_CfgVehicles_Construction_Part_Gate";
+					is_gate=1;
+					required_parts[]=
+					{
+						"base",
+						"wall_base_down",
+						"wall_base_up"
+					};
+					conflicted_parts[]=
+					{
+						"wall_platform"
+					};
+					collision_data[]={};
+					build_action_type=1;
+					dismantle_action_type=1;
+					material_type=5;
+					class Materials
+					{
+						class Material1
+						{
+							type="MetalWire";
+							slot_name="Material_MetalWire";
+							quantity=-1;
+							lockable=1;
+						};
+					};
 				};
-				class Wall_Base_Up_Rotate : AnimRotate
+				class wall_base_down
 				{
+					name="$STR_CfgVehicles_Construction_Part_Base_Down";
+					required_parts[]=
+					{
+						"base"
+					};
+					conflicted_parts[]={};
+					collision_data[]=
+					{
+						"wall_down_min",
+						"wall_down_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=2;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=4;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=8;
+						};
+					};
 				};
-				class Wall_Wood_Down_Rotate : AnimRotate
+				class wall_wood_down
 				{
+					name="$STR_CfgVehicles_Construction_Part_Wood_Down";
+					required_parts[]=
+					{
+						"wall_base_down"
+					};
+					conflicted_parts[]=
+					{
+						"wall_metal_down"
+					};
+					collision_data[]=
+					{
+						"wall_down_min",
+						"wall_down_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=2;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=5;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=10;
+						};
+					};
 				};
-				class Wall_Wood_Up_Rotate : AnimRotate
+				class wall_metal_down
 				{
+					name="$STR_CfgVehicles_Construction_Part_Metal_Down";
+					required_parts[]=
+					{
+						"wall_base_down"
+					};
+					conflicted_parts[]=
+					{
+						"wall_wood_down"
+					};
+					collision_data[]=
+					{
+						"wall_down_min",
+						"wall_down_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=4;
+					class Materials
+					{
+						class Material1
+						{
+							type="MetalPlate";
+							slot_name="Material_MetalSheets";
+							quantity=3;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=12;
+						};
+					};
 				};
-				class Wall_Metal_Down_Rotate : AnimRotate
+				class wall_base_up
 				{
+					name="$STR_CfgVehicles_Construction_Part_Base_Up";
+					required_parts[]=
+					{
+						"base"
+					};
+					conflicted_parts[]={};
+					collision_data[]=
+					{
+						"wall_up_min",
+						"wall_up_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=2;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=4;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=8;
+						};
+					};
 				};
-				class Wall_Metal_Up_Rotate : AnimRotate
+				class wall_wood_up
 				{
+					name="$STR_CfgVehicles_Construction_Part_Wood_Up";
+					required_parts[]=
+					{
+						"wall_base_up"
+					};
+					conflicted_parts[]=
+					{
+						"wall_metal_up"
+					};
+					collision_data[]=
+					{
+						"wall_up_min",
+						"wall_up_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=2;
+					class Materials
+					{
+						class Material1
+						{
+							type="WoodenPlank";
+							slot_name="Material_WoodenPlanks";
+							quantity=5;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=10;
+						};
+					};
 				};
-				class Material_WoodenLogs : AnimSourceHidden
+				class wall_metal_up
 				{
-				};
-				class Material_MetalWire : AnimSourceHidden
-				{
-				};
-				class Wall_Barbedwire_1 : AnimSourceHidden
-				{
-				};
-				class Wall_Barbedwire_1_Mounted : AnimSourceHidden
-				{
-				};
-				class Wall_Barbedwire_2 : AnimSourceHidden
-				{
-				};
-				class Wall_Barbedwire_2_Mounted : AnimSourceHidden
-				{
-				};
-				class Wall_Camonet : AnimSourceHidden
-				{
-				};
-				class Deployed : AnimSourceHidden
-				{
-				};
-				class Base : AnimSourceHidden
-				{
-				};
-				class Wall_Platform : AnimSourceHidden
-				{
-				};
-				class Wall_Platform_Stairs_Left : AnimSourceHidden
-				{
-				};
-				class Wall_Platform_Stairs_Right : AnimSourceHidden
-				{
-				};
-				class Wall_Gate : AnimSourceHidden
-				{
-				};
-				class Wall_Base_Down : AnimSourceHidden
-				{
-				};
-				class Wall_Base_Up : AnimSourceHidden
-				{
-				};
-				class Wall_Metal_Down : AnimSourceHidden
-				{
-				};
-				class Wall_Metal_Up : AnimSourceHidden
-				{
-				};
-				class Wall_Wood_Down : AnimSourceHidden
-				{
-				};
-				class Wall_Wood_Up : AnimSourceHidden
-				{
+					name="$STR_CfgVehicles_Construction_Part_Metal_Up";
+					required_parts[]=
+					{
+						"wall_base_up"
+					};
+					conflicted_parts[]=
+					{
+						"wall_wood_up"
+					};
+					collision_data[]=
+					{
+						"wall_up_min",
+						"wall_up_max"
+					};
+					build_action_type=2;
+					dismantle_action_type=2;
+					material_type=4;
+					class Materials
+					{
+						class Material1
+						{
+							type="MetalPlate";
+							slot_name="Material_MetalSheets";
+							quantity=3;
+						};
+						class Material2
+						{
+							type="Nail";
+							slot_name="Material_Nails";
+							quantity=12;
+						};
+					};
 				};
 			};
-			class Construction {};
-
-			class GUIInventoryAttachmentsProps {};
-			class PointLights {};
 		};
+		class PointLights{};
 	};
 
-//inventory wall
-	class INV_test_Wall: Inventory_Base
-	{
-	    scope = 2;
-	    displayName = "INV_test_Wall";
-	    descriptionShort = "INV_test_Wall";
-	    model = "emt\dzsa_epoch_pv_assets\emt\baseb\walls\wall_1m.p3d";
-	    ContinuousActions[] = {148,147};
-	    rotationFlags = 17;
-	    weight = 510;
-	    itemSize[] = {3,2};
-	    repairableWithKits[] = {5,2};
-	    repairCosts[] = {30.0,25.0};
-	    //hiddenSelections[] = {"camo1"};
-	    //hiddenSelectionsTextures[] = {"\emt\dzsa_epoch_pv_assets\emt\baseb\bboard_01\data\billboard_01_co.paa"};		
-	    class DamageSystem
-	    {
-	    	class GlobalHealth
-	    	{
-	    		class Health
-	    		{
-	    			hitpoints = 100;
-	    			healthLevels[] = {{1.0,{}},{0.7,{}},{0.5,{}},{0.3,{}},{0.0,{}}};
-	    		};
-	    	};
-	    };
-	    class AnimEvents{};
-    };
 
 };
