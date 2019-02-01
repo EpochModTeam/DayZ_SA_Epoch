@@ -96,15 +96,15 @@ class FenceKitPlacing;
 			};
 		};
 		attachments[] = 
-		{
+			{
 			"Wall_Barbedwire_1",
 			"Wall_Barbedwire_2",
-			"Wall_Camonet",
-			"Att_CombinationLock",
+			//"Wall_Camonet",
+			//"Att_CombinationLock",
 			"Material_Nails",
 			"Material_WoodenPlanks",
 			"Material_MetalSheets",
-			"Material_WoodenLogs",
+			"Material_WoodenLogs",   
 			"Material_MetalWire"	
 			};
 		class GUIInventoryAttachmentsProps
@@ -150,7 +150,7 @@ class FenceKitPlacing;
 			};
 		};
 		class AnimationSources
-		{
+			{
 				class AnimSourceShown
 				{
 					source = "user";
@@ -171,33 +171,21 @@ class FenceKitPlacing;
 				};
 				class Wall_Interact_Rotate: AnimRotate{};
 				class Wall_Barbedwire_Mounted_Rotate: AnimRotate{};
-				class Wall_Camonet_Rotate: AnimRotate{};
-				class Wall_Gate_Rotate: AnimRotate{};
 				class Wall_Base_Down_Rotate: AnimRotate{};
 				class Wall_Base_Up_Rotate: AnimRotate{};
-				class Wall_Wood_Down_Rotate: AnimRotate{};
-				class Wall_Wood_Up_Rotate: AnimRotate{};
-				class Wall_Metal_Down_Rotate: AnimRotate{};
-				class Wall_Metal_Up_Rotate: AnimRotate{};
-				class Material_WoodenLogs: AnimSourceHidden{};
-				class Material_MetalWire: AnimSourceHidden{};
+				class material_rockpile: AnimSourceHidden{};
+				class material_bucket: AnimSourceHidden{};
 				class Wall_Barbedwire_1: AnimSourceHidden{};
 				class Wall_Barbedwire_1_Mounted: AnimSourceHidden{};
 				class Wall_Barbedwire_2: AnimSourceHidden{};
 				class Wall_Barbedwire_2_Mounted: AnimSourceHidden{};
-				class Wall_Camonet: AnimSourceHidden{};
 				class Deployed: AnimSourceHidden{};
 				class Base: AnimSourceHidden{};
 				class Wall_Platform: AnimSourceHidden{};
 				class Wall_Platform_Stairs_Left: AnimSourceHidden{};
 				class Wall_Platform_Stairs_Right: AnimSourceHidden{};
-				class Wall_Gate: AnimSourceHidden{};
 				class Wall_Base_Down: AnimSourceHidden{};
 				class Wall_Base_Up: AnimSourceHidden{};
-				class Wall_Metal_Down: AnimSourceHidden{};
-				class Wall_Metal_Up: AnimSourceHidden{};
-				class Wall_Wood_Down: AnimSourceHidden{};
-				class Wall_Wood_Up: AnimSourceHidden{};
 			};
 		class Construction
 		{
@@ -550,7 +538,8 @@ class FenceKitPlacing;
 				};
 			};
 		};
-		class PointLights{};
+			class PointLights{};
+
 	};
 
 
