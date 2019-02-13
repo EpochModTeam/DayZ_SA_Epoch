@@ -16,7 +16,7 @@ class test_Wall extends BaseBuildingBase
 	protected EffectSound m_SoundGate_Start;
 	protected EffectSound m_SoundGate_End;
 
-	void Fence()
+	void test_Wall()
 	{
 		//synchronized variables
 		RegisterNetSyncVariableBool("m_HasGate");
@@ -120,6 +120,7 @@ class test_Wall extends BaseBuildingBase
 		ctx.Write(m_IsOpened);
 	}
 
+	/*
 	override void OnStoreLoad(ParamsReadContext ctx, int version)
 	{
 		super.OnStoreLoad(ctx, version);
@@ -136,6 +137,7 @@ class test_Wall extends BaseBuildingBase
 			OpenFence();
 		}
 	}
+	*/
 
 	override void OnVariablesSynchronized()
 	{
