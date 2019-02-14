@@ -5,6 +5,7 @@ modded class ActionConstructor
 		super.ConstructActions(actions, suactions, cactions, iactions);
 		
 		// Custom Actions	
-		// actions.Insert(new ActionCustom);
+		actions.Insert(new ActionUnlockBarrel);
+		actions.Insert(new ActionLockBarrel);
 	}
 };

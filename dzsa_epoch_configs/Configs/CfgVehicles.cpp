@@ -1,5 +1,11 @@
 class CfgVehicles
 {
+	class Container_Base;
+	class Barrel_ColorBase : Container_Base
+	{
+		InteractActions[] = { 1025,1026,30001,30002 };
+	};
+
 	class Armband_ColorBase;
 	class Armband_EPOCH: Armband_ColorBase
 	{

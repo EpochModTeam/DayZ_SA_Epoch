@@ -1,0 +1,4 @@
+#include "\languagecore\stringtable.csv"
+"Language","original","english","czech","german","russian","polish","hungarian","italian","spanish","french","chinese","japanese","portuguese","chinesesimp",
+"STR_DZE_LOCK","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock","Lock",
+"STR_DZE_UNLOCK","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock","Unlock",
