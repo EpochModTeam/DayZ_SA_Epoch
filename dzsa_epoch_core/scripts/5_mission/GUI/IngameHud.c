@@ -74,5 +74,26 @@ modded class IngameHud extends Hud
 		
 		if(debugStaminaHud) PrintFormat("[CCCPDebug]IngameHud.c SetStamina Range:%1 Value:%2 Percent:%3 max:%4 sx:%5 sy:%6", range, value, percentage, max, sx, sy);
 
+		// set health & blood values
+		if( !GetGame().IsMultiplayer() )
+		{
+			if( GetGame().GetPlayer() )
+			{
+				PlayerBase player;
+				Class.CastTo(player, GetGame().GetPlayer() );
+
+				if( player )
+				{
+					float h1 = player.GetHealth("","");
+					float b1 = player.GetHealth("","Blood");
+
+					GetDayZGame().GetBacklit().SetHealth(h1);
+					GetDayZGame().GetBacklit().SetBlood(b1);
+				}
+			}
+		}
+		
+		// update backlit
+		GetDayZGame().GetBacklit().UpdatePlayer(false);		
 	}
 }
