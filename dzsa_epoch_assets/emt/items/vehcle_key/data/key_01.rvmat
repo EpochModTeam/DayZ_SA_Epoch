@@ -8,7 +8,7 @@ PixelShaderID = "Super";
 VertexShaderID = "Super";
 class Stage1
 {
-	texture = "emt\dzsa_epoch_assets\emt\items\vehcle_key\data\key_01_nohq.paa";
+	texture = "emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_nohq.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -44,7 +44,7 @@ class Stage3
 };
 class Stage4
 {
-	texture = "emt\dzsa_epoch_assets\emt\items\vehcle_key\data\key_01__as.paa";
+	texture = "emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01__as.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -56,7 +56,7 @@ class Stage4
 };
 class Stage5
 {
-	texture = "emt\dzsa_epoch_assets\emt\items\vehcle_key\data\key_01_smdi.paa";
+	texture = "emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_smdi.paa";
 	uvSource = "tex";
 	class uvTransform
 	{
