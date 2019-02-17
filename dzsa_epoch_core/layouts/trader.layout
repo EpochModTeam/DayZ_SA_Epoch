@@ -1,0 +1,37 @@
+FrameWidgetClass rootFrame {
+ position 0 -1.57205
+ size 1 1
+ halign center_ref
+ valign center_ref
+ hexactpos 1
+ vexactpos 1
+ hexactsize 0
+ vexactsize 0
+ {
+  TextListboxWidgetClass TextListboxWidget0 {
+   position 1162.48999 84.9433
+   size 547.91302 890.62
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+  }
+  TextListboxWidgetClass TextListboxWidget1 {
+   position 209.987 87.5065
+   size 552.62897 890.62
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+  }
+  ButtonWidgetClass ButtonWidget0 {
+   position 841.39703 943.41003
+   size 241.36301 81.0131
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   text "Trade"
+  }
+ }
+}

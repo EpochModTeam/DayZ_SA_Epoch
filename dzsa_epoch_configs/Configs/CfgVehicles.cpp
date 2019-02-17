@@ -1,9 +1,31 @@
 class CfgVehicles
 {
 	class Container_Base;
+	class Inventory_Base;
+	class FenceKit;
+	class FenceKitPlacing;
+
 	class Barrel_ColorBase : Container_Base
 	{
 		InteractActions[] = { 1025,1026,30001,30002 };
+	};
+	
+	class EpochKey_Base : Inventory_Base {
+		scope = 0;
+		model = "\emt\dzsa_epoch_assets\emt\items\vehicle_key\vehicle_key_01.p3d";
+	};
+	class EpochKey_Black : EpochKey_Base {
+		scope = 2;
+		displayName = "Vehicle Key (Black 1234)";
+		descriptionShort = "Vehicle Key (Black)";
+		animClass = "Knife";
+		// ContinuousActions[] = { 146 };
+		rotationFlags = 17;
+		// RestrainUnlockType = 0;
+		weight = 4;
+		itemSize[] = { 1,1 };
+		fragility = 0.0099999998;
+		hiddenSelectionsTextures[] = { "\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_nohq.paa","\emt\dzsa_epoch_assets\DS\Masks\welding_mask_devilscamo_co.paa","\emt\dzsa_epoch_assets\DS\Masks\welding_mask_devilscamo_co.paa" };
 	};
 
 	class Armband_ColorBase;
@@ -31,10 +53,8 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = {"\emt\dzsa_epoch_assets\DS\Masks\welding_mask_devilscamo_co.paa","\emt\dzsa_epoch_assets\DS\Masks\welding_mask_devilscamo_co.paa","\emt\dzsa_epoch_assets\DS\Masks\welding_mask_devilscamo_co.paa"};
 
 	};
-///walls
-class Inventory_Base;
-class FenceKit;
-class FenceKitPlacing;
+	///walls
+	
 	class test_wall_Kit: FenceKit
 	{
 		scope=2;
