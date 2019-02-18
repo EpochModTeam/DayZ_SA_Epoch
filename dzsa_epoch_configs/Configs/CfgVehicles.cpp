@@ -16,7 +16,7 @@ class CfgVehicles
 	};
 	class EpochKey_Black : EpochKey_Base {
 		scope = 2;
-		displayName = "Vehicle Key (Black 1234)";
+		displayName = "Vehicle Key (Black)";
 		descriptionShort = "Vehicle Key (Black)";
 		animClass = "Knife";
 		// ContinuousActions[] = { 146 };
