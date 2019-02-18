@@ -25,7 +25,7 @@ class CfgVehicles
 		weight = 4;
 		itemSize[] = { 1,1 };
 		fragility = 0.0099999998;
-		hiddenSelectionsTextures[] = { "\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa","\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa","\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa" };
+		// hiddenSelectionsTextures[] = { "\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa","\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa","\emt\dzsa_epoch_assets\emt\items\vehicle_key\data\key_01_co.paa" };
 	};
 
 	class Armband_ColorBase;
