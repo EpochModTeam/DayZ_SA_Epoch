@@ -1,6 +1,6 @@
 class EpochKey_Base extends ItemBase
 {
-	private int m_dze_keyCode = 1234;
+	private int m_dze_keyCode = 0;
 
 	void EpochKey_Base()
 	{
