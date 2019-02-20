@@ -64,7 +64,7 @@ class test_wall_Kit extends ItemBase
 
 	//================================================================
 	// ADVANCED PLACEMENT
-	//================================================================			
+	//================================================================
 
 	override void OnPlacementComplete(Man player)
 	{
@@ -75,7 +75,7 @@ class test_wall_Kit extends ItemBase
 			vector position = player_base.GetLocalProjectionPosition();
 			vector orientation = player_base.GetLocalProjectionOrientation();
 
-			Fence fence = Fence.Cast(GetGame().CreateObject("test_Wall", GetPosition()));
+			test_Wall fence = test_Wall.Cast(GetGame().CreateObject("test_Wall", GetPosition()));
 			fence.SetPosition(position);
 			fence.SetOrientation(orientation);
 
