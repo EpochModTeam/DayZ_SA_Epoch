@@ -1,15 +1,15 @@
 /*
 	Epoch Mod for DayZ Standalone
-	
+
 	FileName: hologram.c
 
 	Authors: DayZ SA Epoch Dev Team and Community Contributors
-	https://github.com/EpochModTeam/DayZ_SA_Epoch/blob/experimental/README.md	
-	
+	https://github.com/EpochModTeam/DayZ_SA_Epoch/blob/experimental/README.md
+
 	Licensing:
 	https://github.com/EpochModTeam/DayZ_SA_Epoch/blob/experimental/LICENSE.md
 
-	
+
 	Changelog:
 
 	[2/19/2019] DirtySanchez
@@ -17,6 +17,7 @@
 	[NewDate] Author(s)
 		Initials(Change#)-Description
 */
+/*
 modded class Hologram
 {
 	string emt_CantBuild = "#(argb,8,8,3)color(0.81,0,0,0.75,ca)";
@@ -37,7 +38,7 @@ modded class Hologram
 			string SEL_CORD_PLUGGED = m_Parent.GetCompEM().SEL_CORD_PLUGGED;
 			string SEL_CORD_FOLDED = m_Parent.GetCompEM().SEL_CORD_FOLDED;
 			string selection_to_refresh;
-			
+
 			const string emt_HGDeployablePath = hologram_material_path + "\\" + hologram_material + "_deployable.rvmat";
 			if ( !IsColliding() && !IsFloating() )
 			{
@@ -53,10 +54,10 @@ modded class Hologram
 								m_Projection.SetObjectTexture( GetHiddenSelection( selection_to_refresh ), emt_CanBuild );
 								m_Projection.SetObjectMaterial( GetHiddenSelection( selection_to_refresh ), powered_hologram_path );
 							}
-							
+
 							m_Projection.SetAnimationPhase( SEL_CORD_PLUGGED, 0);
-							m_Projection.SetAnimationPhase( SEL_CORD_FOLDED, 1);	
-						}							
+							m_Projection.SetAnimationPhase( SEL_CORD_FOLDED, 1);
+						}
 						else
 						{
 							for( int j = 0; j < m_SelectionsToRefresh.Count(); j++ )
@@ -65,7 +66,7 @@ modded class Hologram
 								m_Projection.SetObjectTexture( GetHiddenSelection( selection_to_refresh ), emt_PoweredDevice );
 								m_Projection.SetObjectMaterial( GetHiddenSelection( selection_to_refresh ), deployable_hologram_path );
 							}
-							
+
 							m_Projection.SetAnimationPhase( SEL_CORD_PLUGGED, 1);
 							m_Projection.SetAnimationPhase( SEL_CORD_FOLDED, 0);
 						}
@@ -80,7 +81,7 @@ modded class Hologram
 						}
 							m_Projection.SetAnimationPhase( SEL_CORD_PLUGGED, 1);
 							m_Projection.SetAnimationPhase( SEL_CORD_FOLDED, 0);
-					}			
+					}
 				}
 				else
 				{
@@ -104,3 +105,5 @@ modded class Hologram
 		}
 	}
 }
+
+*/
