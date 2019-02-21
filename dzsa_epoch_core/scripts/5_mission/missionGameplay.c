@@ -67,7 +67,6 @@ modded class MissionGameplay
 	// End DS6
 	
 	// DS9 Stamina Bar length changes
-	ref WidgetCache 		cccp_WidgetsCache;
 	override void OnInit()
 	{
 		if ( m_Initialized )
@@ -122,19 +121,11 @@ modded class MissionGameplay
 		//AIBehaviourHL.RegAIBehaviour("zombie2",AIBehaviourHLZombie2,AIBehaviourHLDataZombie2);
 		//RegBehaviour("zombie2",AIBehaviourHLZombie2,AIBehaviourHLDataZombie2);
 		
-		cccp_WidgetsCache				= new WidgetCache;
-		
 		if( GetGame().IsMultiplayer() )
 		{
 			OnlineServices.m_MuteUpdateAsyncInvoker.Insert( SendMuteListToServer );
 		}
 		super.OnInit();
-	}
-	
-	// Allow return of new hud widgets
-	WidgetCache GetWidgetCache()
-	{
-		return cccp_WidgetsCache;
 	}
 	// End DS9
 }
