@@ -17,7 +17,7 @@
 	[NewDate] Author(s)
 		Initials(Change#)-Description
 */
-/*
+
 modded class Hologram
 {
 	string emt_CantBuild = "#(argb,8,8,3)color(0.81,0,0,0.75,ca)";
@@ -34,12 +34,11 @@ modded class Hologram
 			string config_model = "CfgVehicles" + " " + m_Projection.GetType() + " " + "hologramMaterialPath";
 			string hologram_material_path = GetGame().ConfigGetTextOut( config_model );
 			string deployable_hologram_path = hologram_material_path + "\\" + hologram_material + "_deployable.rvmat";
-			string powered_hologram_path =  hologram_material_path + "\\" + hologram_material + "_powered.rvmat";
+			string powered_hologram_path = hologram_material_path + "\\" + hologram_material + "_powered.rvmat";
 			string SEL_CORD_PLUGGED = m_Parent.GetCompEM().SEL_CORD_PLUGGED;
 			string SEL_CORD_FOLDED = m_Parent.GetCompEM().SEL_CORD_FOLDED;
 			string selection_to_refresh;
 
-			const string emt_HGDeployablePath = hologram_material_path + "\\" + hologram_material + "_deployable.rvmat";
 			if ( !IsColliding() && !IsFloating() )
 			{
 				if ( m_Parent.HasEnergyManager() )
@@ -88,7 +87,7 @@ modded class Hologram
 					for( int l = 0; l < m_SelectionsToRefresh.Count(); l++ )
 					{
 						selection_to_refresh = m_SelectionsToRefresh.Get(l);
-						m_Projection.SetObjectTexture( GetHiddenSelection( selection_to_refresh ), emt_CantBuild );
+						m_Projection.SetObjectTexture( GetHiddenSelection( selection_to_refresh ), emt_CanBuild );
 						m_Projection.SetObjectMaterial( GetHiddenSelection( selection_to_refresh ), deployable_hologram_path );
 					}
 				}
@@ -105,5 +104,3 @@ modded class Hologram
 		}
 	}
 }
-
-*/
