@@ -29,8 +29,8 @@ modded class PluginManager
 		//----------------------------------------------------------------------
 		//				Module Class Name 						Client	Server
 		//----------------------------------------------------------------------	
-		RegisterPlugin( "PluginExample", 						true, 	true);
 		RegisterPlugin( "PluginProcessLogs", 					true, 	true);
+		RegisterPlugin( "PluginExample", 						false, 	true);
 		
 		// Call super to allow for other mods to utilize the init to register their plugins
 		super.Init();

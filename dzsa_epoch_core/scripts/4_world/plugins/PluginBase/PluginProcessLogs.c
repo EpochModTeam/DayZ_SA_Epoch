@@ -10,8 +10,8 @@
 	https://github.com/EpochModTeam/DayZ_SA_Epoch/blob/experimental/LICENSE.md
 
 	Usage:
-		-Check InitServerLog() for example code and usage
-		-Check header to each method for more info
+		-Check comment header of each method for more info
+		-Check TestLogging() for example code and usage
 	
 	Changelog:
 
@@ -34,14 +34,20 @@ class PluginProcessLogs extends PluginBase
 
 	// Time variables for use in timestamping cycled files and inside logs
 	int year, month, day, hour, minute, second;
-	string sYear, sMonth, sDay, sHour, sMinute, sSecond, currentTime, currentDate;
+	string sYear, sMonth, sDay, sHour, sMinute, sSecond, currentTime, currentDate, message;
 	bool m_LogEnabled, result;
 	string new_path, file_path, emt_LogFilePath;
 
 	void PluginProcessLogs()
 	{
 		Print("Init: PluginProcessLogs and Init EpochServer.log");
-		InitServerLog();
+		emt_LogFilePath = BuildFilePath("EpochServer", "log", "", "");
+		
+		// Init epoch server log
+		CycleLogFile("EpochServer", "$profile:EpochServer.log");
+		
+		// testing only, remove when needed
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestLogging, 5 * 1000, false);
 	}
 
 	void ~PluginProcessLogs()
@@ -49,42 +55,18 @@ class PluginProcessLogs extends PluginBase
 		Print("~PluginProcessLogs Closed");
 	}
 
-	// Purely development example, should be moved to proper epoch server startup in missionServer
-	void InitServerLog()
+	// testing only, remove when needed
+	void TestLogging()
 	{
-		// Init epoch server log
-		file_path = "$profile:EpochServer.log";
-		if (FileExist(file_path))
-		{
-			CycleLogFile("EpochServer", file_path);
-		}
-		emt_LogFilePath = BuildFilePath("EpochServer", "log", "", "");
-
 		// EXAMPLES
 		WriteLog("EpochServer", emt_LogFilePath, "Epoch Mod Server instance initiated. Happy Hosting!");
 
 		WriteProfileLog("EpochServer", "Alternate form of writing to logs without pathing needed");
 
-		WriteSaveLog("EpochPlayerUID", "joined", GetDateString() + "_" + GetTimeString(false));
+		//WriteSaveLog("EpochPlayerUID", "joined", GetDateString() + "_" + GetTimeString(false));
 	}
 	
-	// Create New file for logging based on provided name and path
-	private bool CreateNewLogFile(string file_name, string file_path)
-	{	
-		emt_NewLogFile = OpenFile(file_path, FileMode.WRITE);
-		if (emt_NewLogFile != 0)
-		{
-			FPrintln(emt_NewLogFile, "Log Created on " + GetDateString() + " at " + GetTimeString(false));
-			CloseFile(emt_NewLogFile);
-			return true;
-		}
-		
-		// Unable to create new Log file
-		Print("Unable to create " + file_name + " file in " + file_path);
-		return false;
-	}
-	
-	// Allows writting to exact log file name and pathing
+	// Allows writing to exact log file name and path
 	void WriteLog(string file_name, string file_path, string text)
 	{
 		emt_LogFile = OpenFile(file_path, FileMode.APPEND);
@@ -97,7 +79,7 @@ class PluginProcessLogs extends PluginBase
 		if (debugPluginProcessLogs) Print(file_name + " logged " + text);
 	}
 	
-	// This will save logs directly to profile without need for pathing
+	// This will save logs directly to profile without need for path
 	void WriteProfileLog(string file_name, string text)
 	{
 		string path = ProfileLocation + file_name + ".log";
@@ -118,6 +100,7 @@ class PluginProcessLogs extends PluginBase
 	// Checks for existing file, rotates or creates a new file
 	void CycleLogFile(string file_name, string file_path)
 	{
+		message = "Log Created on " + GetDateString() + " at " + GetTimeString(false);
 		if (FileExist(file_path))
 		{
 			if (debugPluginProcessLogs) Print(file_name + " exists, cycling it.");
@@ -127,21 +110,17 @@ class PluginProcessLogs extends PluginBase
 			
 			// Copying Old Log to New Log filename
 			CopyFile(file_path, newFilePath);
-			
+
 			// Removing Old Log to ensure no issues.
 			DeleteFile(file_path);
-			
-			// Create New Log
-			if (CreateNewLogFile(file_name, file_path))
-				m_LogEnabled = true;
+
+			WriteLog(file_name, file_path, message);
 		}
 		else
 		{
-			if (debugPluginProcessLogs) Print(file_name + "does not exist, creating new.");
-			
-			// Create New Log
-			if (CreateNewLogFile(file_name, file_path))
-				m_LogEnabled = true;
+			if (debugPluginProcessLogs) Print(file_name + " does not exist, creating new.
+			");
+			WriteLog(file_name, file_path, message);
 		}
 	}
 	
@@ -159,7 +138,7 @@ class PluginProcessLogs extends PluginBase
 		file_path = "";
 		if(file_name == "" || file_type == "")
 		{
-			string log = "Failed attempt to build pathing for " + file_name + "." +  file_type;
+			string log = "Failed attempt to build path for " + file_name + "." +  file_type;
 			WriteProfileLog("EpochServer", log);
 			return file_path;
 		}
@@ -206,7 +185,7 @@ class PluginProcessLogs extends PluginBase
 		// Getting Current Time
 		GetHourMinuteSecond(hour, minute, second);
 		
-		// Setting String for Time Variables for timestamp
+		// Setting String for Time Variables for time-stamp
 		sHour = hour.ToString();
 		if (sHour.Length() == 1)
 			sHour = "0" + sHour;
