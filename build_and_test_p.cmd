@@ -19,7 +19,7 @@ SET PBO_PREFIX=emt
 REM path to sources
 SET MAIN_PATH=%CD%
 REM path to private sources 
-SET SIDE_PATH=D:\Current Projects\GitHub\dayZ_SA_Epoch_internal
+
 SET AddonBuilder=%TOOLS_PATH%\AddonBuilder
 SET INCLUDES_PATH="%MAIN_PATH%\includes.txt"
 SET PDRIVE=P:\%PBO_PREFIX%
