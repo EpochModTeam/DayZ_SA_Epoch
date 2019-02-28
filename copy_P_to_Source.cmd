@@ -14,6 +14,7 @@ for /d %%D in ("%MAIN_PATH%\*") do (
 	if exist "%%~fD\config.cpp" (
 		if exist "%PDRIVE%\%%~nxD\config.cpp" (	
 			REM xcopy /s/e/y/q/i/d %PDRIVE%\%%~nxD "%%~fD"
+			echo Copying %PDRIVE%\%%~nxD to "%%~fD"
 		)
 	)
 )
@@ -22,6 +23,7 @@ for /d %%D in ("%SIDE_PATH%\*") do (
 	if exist "%%~fD\config.cpp" (
 		if exist "%PDRIVE%\%%~nxD\config.cpp" (		
 			REM xcopy /s/e/y/q/i/d %PDRIVE%\%%~nxD "%%~fD"
+			echo Copying %PDRIVE%\%%~nxD to "%%~fD"
 		)
 	)
 )
