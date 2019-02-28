@@ -118,8 +118,7 @@ class PluginProcessLogs extends PluginBase
 		}
 		else
 		{
-			if (debugPluginProcessLogs) Print(file_name + " does not exist, creating new.
-			");
+			if (debugPluginProcessLogs) Print(file_name + " does not exist, creating new.");
 			WriteLog(file_name, file_path, message);
 		}
 	}
