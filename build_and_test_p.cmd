@@ -52,7 +52,7 @@ xcopy /s/e/y/q/i/d "%CLIENT_PATH%" "%SERVER_PATH%"
 REM start server with mod enabled
 set /p start_server="Start Server: Y or N?"
 if "%start_server%" == "Y" (
-	START "StartServer" "%DAYZ_SERVER_PATH%\DayZServer_x64.exe" -config=serverDZ.cfg "-mod=%MOD_NAME%;%OTHER_MODS%" "-profiles=%SERVER_PROFILE_NAME%" -scrAllowFileWrite
+	START "StartServer" "%DAYZ_SERVER_PATH%\DayZServer_x64.exe" -config=serverDZ.cfg "-mod=%MOD_NAME%;%OTHER_MODS%" "-profiles=%DAYZ_SERVER_PATH%\%SERVER_PROFILE_NAME%" -scrAllowFileWrite
 )
 
 REM start client with mod enabled and join server
