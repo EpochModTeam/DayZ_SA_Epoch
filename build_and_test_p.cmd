@@ -5,6 +5,9 @@ REM Arma 3 tools folder path
 SET TOOLS_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin
 SET DAYZ_CLIENT_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZ
 SET DAYZ_SERVER_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZServer
+SET SERVER_PROFILE_NAME=EpochServer
+
+SET WORKSHOP_PATH=%DAYZ_CLIENT_PATH%\!Workshop\
 
 REM set output folder name
 SET MOD_NAME=@EpochTest
@@ -13,7 +16,7 @@ REM path to compiled mod
 SET CLIENT_PATH=%DAYZ_CLIENT_PATH%\%MOD_NAME%
 SET SERVER_PATH=%DAYZ_SERVER_PATH%\%MOD_NAME%
 
-REM OTHER_MODS=@RPCFramework;@Permissions-Framework;@Community-Online-Tools;
+REM SET OTHER_MODS=%WORKSHOP_PATH%@RPCFramework;%WORKSHOP_PATH%@Permissions-Framework;%WORKSHOP_PATH%@Community-Online-Tools;
 SET OTHER_MODS=
 SET PBO_PREFIX=emt
 REM path to sources
@@ -49,7 +52,7 @@ xcopy /s/e/y/q/i/d "%CLIENT_PATH%" "%SERVER_PATH%"
 REM start server with mod enabled
 set /p start_server="Start Server: Y or N?"
 if "%start_server%" == "Y" (
-	START "StartServer" "%DAYZ_SERVER_PATH%\DayZServer_x64.exe" -config=serverDZ.cfg "-mod=%MOD_NAME%;%OTHER_MODS%" -profiles=D:\DayZServerProfile -scrAllowFileWrite
+	START "StartServer" "%DAYZ_SERVER_PATH%\DayZServer_x64.exe" -config=serverDZ.cfg "-mod=%MOD_NAME%;%OTHER_MODS%" "-profiles=%SERVER_PROFILE_NAME%" -scrAllowFileWrite
 )
 
 REM start client with mod enabled and join server

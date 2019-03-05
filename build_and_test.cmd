@@ -1,11 +1,12 @@
 @Echo Off
-SETLOCAL enabledelayedexpansion
 
 REM Arma 3 tools folder path
 SET TOOLS_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZ Tools\Bin
 SET DAYZ_CLIENT_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZ
 SET DAYZ_SERVER_PATH=D:\Program Files (x86)\Steam\steamapps\common\DayZServer
 SET SERVER_PROFILE_NAME=EpochServer
+
+SET WORKSHOP_PATH=%DAYZ_CLIENT_PATH%\!Workshop\
 
 REM set output folder name
 SET MOD_NAME=@EpochTest
@@ -14,7 +15,7 @@ REM path to compiled mod
 SET CLIENT_PATH=%DAYZ_CLIENT_PATH%\%MOD_NAME%
 SET SERVER_PATH=%DAYZ_SERVER_PATH%\%MOD_NAME%
 
-REM SET OTHER_MODS=@RPCFramework;@Permissions Framework;@Community Online Tools
+REM SET OTHER_MODS=%WORKSHOP_PATH%@RPCFramework;%WORKSHOP_PATH%@Permissions-Framework;%WORKSHOP_PATH%@Community-Online-Tools;
 SET OTHER_MODS=
 SET PBO_PREFIX=emt
 REM path to sources
