@@ -30,36 +30,43 @@ modded class LogoutMenu extends UIScriptedMenu
 	private ButtonWidget cccp_bLogoutNow;
 	private ButtonWidget cccp_bCancel;
 	private int cccp_iTime;
-	
+
 	override Widget Init()
 	{
-		//layoutRoot = GetGame().GetWorkspace().CreateWidgets("gui/layouts/day_z_logout_dialog.layout");
-		layoutRoot = GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_assets/DS/UI/Options/day_z_logout_dialog.layout");
-		
+		layoutRoot = GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_core/layouts/day_z_logout_dialog.layout");
+
 		cccp_LogoutTimetext = TextWidget.Cast( layoutRoot.FindAnyWidget("logoutTimeText") );
 		cccp_Info = TextWidget.Cast( layoutRoot.FindAnyWidget("txtInfo") );
 		cccp_bLogoutNow = ButtonWidget.Cast( layoutRoot.FindAnyWidget("bLogoutNow") );
 		cccp_bCancel = ButtonWidget.Cast( layoutRoot.FindAnyWidget("bCancel") );
-		
-		PlayerBase player = PlayerBase.Cast(GetGame().GetPlayer());
-		
+#ifdef PLATFORM_CONSOLE
+		cccp_bCancel.Show( false );
+		cccp_bLogoutNow.Show( false );
+
+		cccp_bCancel = ButtonWidget.Cast( layoutRoot.FindAnyWidget("bCancelConsole") );
+		cccp_bCancel.Show( true );
+#else
+		cccp_bCancel.Show( true );
+		cccp_bLogoutNow.Show( true );
+		layoutRoot.FindAnyWidget("bCancelConsole").Show( false );
+#endif
 		UpdateInfo();
-		
+
 		// player should sit down if possible
-		// Create client settings for custom logout animations/actions
+		PlayerBase player = PlayerBase.Cast(GetGame().GetPlayer());
 		if (player.GetEmoteManager() && !player.IsRestrained() && !player.IsUnconscious()) 
 		{
 			player.GetEmoteManager().CreateEmoteCBFromMenu(ID_EMOTE_SITA);
 		}
-		
+
 		return layoutRoot;
 	}
-	
+
 	override void SetLogoutTime()
 	{
 		cccp_LogoutTimetext.SetText(" ");
 	}
-	
+
 	override void SetTime(int time)
 	{
 		// Logout time modification here for in combat or other usage to stop log out
@@ -67,7 +74,7 @@ modded class LogoutMenu extends UIScriptedMenu
 		if(time > 7) cccp_iTime = time;
 		cccp_LogoutTimetext.SetText(cccp_iTime.ToString());
 	}
-	
+
 	override void UpdateTime()
 	{
 		if (cccp_iTime > 0)
@@ -80,7 +87,7 @@ modded class LogoutMenu extends UIScriptedMenu
 			Exit();
 		}
 	}
-	
+
 	override void UpdateInfo()
 	{
 		PlayerBase player = PlayerBase.Cast( GetGame().GetPlayer() );
@@ -101,7 +108,7 @@ modded class LogoutMenu extends UIScriptedMenu
 		//cccp_bLogoutNow.SetText("In Combat");
 		//cccp_Info.SetText("Combat Logging Protection Enabled. Please Wait.");
 	}
-	
+
 	override bool OnClick(Widget w, int x, int y, int button)
 	{
 		super.OnClick(w, x, y, button);
@@ -109,7 +116,7 @@ modded class LogoutMenu extends UIScriptedMenu
 		if (w == cccp_bLogoutNow)
 		{
 			//GetGame().GetMission().AbortMission();
-			
+
 			//return true;
 			//check lastHitByTime > 30s and/or lastNearHitTime* > 30s | *needs to be created
 			return false;

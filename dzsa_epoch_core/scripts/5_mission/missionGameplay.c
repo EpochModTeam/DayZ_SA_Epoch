@@ -33,7 +33,7 @@ modded class MissionGameplay
 		super.OnMissionStart();
 
 		// Init new logo and toggle it on
-		dze_ServerLogoWidget = GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_assets/DS/UI/Logos/EpochLogo.layout");
+		dze_ServerLogoWidget = GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_core/layouts/EpochLogo.layout");
 		dze_Logo = ImageWidget.Cast(dze_ServerLogoWidget.FindAnyWidget("logo") );
 		dze_Logo.LoadImageFile(0, "emt/dzsa_epoch_assets/DS/UI/Logos/EpochLogo.paa" );
 		LogoToggle();
@@ -85,7 +85,7 @@ modded class MissionGameplay
 		if ( !m_HudRootWidget )
 		{
 			// DS9 override current layout file for modded
-			m_HudRootWidget			= GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_assets/DS/UI/Hud/day_z_hud.layout");
+			m_HudRootWidget			= GetGame().GetWorkspace().CreateWidgets("emt/dzsa_epoch_core/layouts/day_z_hud.layout");
 			
 			m_HudRootWidget.Show(false);
 			
