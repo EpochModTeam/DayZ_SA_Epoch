@@ -382,7 +382,7 @@ class plywindow extends BaseBuildingBase
 	}
 
 	//--- ACTION CONDITIONS
-	override bool IsFacingFront(PlayerBase player, string selection)
+	bool IsFacingFront(PlayerBase player, string selection)
 	{
 		vector fence_pos = GetPosition();
 		vector player_pos = player.GetPosition();
@@ -405,7 +405,7 @@ class plywindow extends BaseBuildingBase
 		return false;
 	}
 
-	override bool IsFacingBack(PlayerBase player, string selection)
+	bool IsFacingBack(PlayerBase player, string selection)
 	{
 		return !IsFacingFront(player, selection);
 	}
@@ -426,5 +426,13 @@ class plywindow extends BaseBuildingBase
 	protected void SoundGateCloseEnd()
 	{
 		PlaySoundSet(m_SoundGate_End, SOUND_GATE_CLOSE_END, 0.1, 0.1);
+	}
+	
+	void Synchronize()
+	{
+		if ( GetGame() && GetGame().IsServer() )
+		{
+			SetSynchDirty();
+		}
 	}
 }

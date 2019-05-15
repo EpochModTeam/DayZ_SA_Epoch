@@ -98,7 +98,7 @@ modded class MissionGameplay
 			m_MicrophoneIcon		= ImageWidget.Cast( m_HudRootWidget.FindAnyWidget("mic") );
 
 			// notification window
-			m_NotificationWidget	= new NotificationMessage( m_HudRootWidget );
+			//NotificationMessage m_NotificationWidget	= new NotificationMessage( m_HudRootWidget );//axeman - Commented out - can't find
 			
 			// chat channel
 			m_ChatChannelArea		= m_HudRootWidget.FindAnyWidget("ChatChannelPanel");

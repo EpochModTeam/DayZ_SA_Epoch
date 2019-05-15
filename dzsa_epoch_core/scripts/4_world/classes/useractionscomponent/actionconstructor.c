@@ -1,11 +1,10 @@
 modded class ActionConstructor
 {
-	override void ConstructActions(out array<ref ActionBase> actions, out TIntArray suactions, out TIntArray cactions, out TIntArray iactions)
-	{
-		super.ConstructActions(actions, suactions, cactions, iactions);
-		
-		// Custom Actions	
-		actions.Insert(new ActionUnlockBarrel);
-		actions.Insert(new ActionLockBarrel);
-	}
-};
+    override void RegisterActions(TTypenameArray actions)
+    {
+        super.RegisterActions(actions);    //This executes the original so you dont mess anything up
+        
+        actions.Insert(ActionUnlockBarrel);
+        actions.Insert(ActionLockBarrel);
+    }
+}
