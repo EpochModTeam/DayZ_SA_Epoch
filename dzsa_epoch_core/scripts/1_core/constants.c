@@ -1,0 +1,1 @@
+const bool dze_disableInfectedAttack = true;//Disable / enable infected attack for testing.
